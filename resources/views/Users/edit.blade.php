@@ -29,6 +29,21 @@
             <label for="password" class="peer-focus:font-medium absolute text-sm text-gray-400 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
         </div>
         <div class="relative z-0 mb-6 w-full group">
+            <label for="role" class="sr-only">Role</label>
+            <select id="role" name="role" class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 text-gray-400 border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                <option value="Admin"
+                @if ($user->role == "Admin")
+                    selected
+                @endif
+                >Admin</option>
+                <option value="User"
+                @if ($user->role == "User")
+                    selected
+                @endif
+                >User</option>
+            </select>
+        </div>
+        <div class="relative z-0 mb-6 w-full group">
             <input type='hidden' value='0' name='status'>
             <input id="checked-checkbox" name="status" type="checkbox" value="1" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             @if ($user->status == 1)

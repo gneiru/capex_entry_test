@@ -16,7 +16,7 @@
 <body>
     @include('components.navbar')
 
-    <div class="max-w-2xl mx-auto bg-[#1F2937] my-3 p-4 ">
+    <div class="max-w-3xl mx-auto bg-[#1F2937] my-3 p-4 ">
         @yield('content')
     </div>
 </body>

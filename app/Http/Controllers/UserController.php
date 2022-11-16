@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     public function index()
     {
-        $users = User::orderBy('id','desc')->paginate(5);
+        $users = User::orderBy('id','asc')->paginate(5);
         return view('users.index', compact('users'));
     }
 
@@ -22,9 +23,9 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required',
+            'role' => 'required',
             'password' => 'required',
         ]);
-        
         User::create($request->post());
 
         return redirect()->route('users.index')->with('status','User has been created successfully.');

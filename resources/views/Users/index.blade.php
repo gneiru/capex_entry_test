@@ -27,6 +27,9 @@
             <thead class="text-xs uppercase bg-gray-700 text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">
+                        ID
+                    </th>
+                    <th scope="col" class="px-6 py-3">
                         Name
                     </th>
                     <th scope="col" class="px-6 py-3">
@@ -34,6 +37,9 @@
                     </th>
                     <th scope="col" class="px-6 py-3">
                         Status
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Role
                     </th>
                     <th scope="col" class="px-6 py-3">
                         Action
@@ -45,6 +51,10 @@
                     @forelse ($users as $user)
                         <tr
                             class="bg-white border-b bg-gray-800 border-gray-700 hover:bg-gray-50 hover:bg-gray-600">
+                            <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap">
+                                {{ $user->id }}
+                            </th>
+                            
                             <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap">
                                 {{ $user->name }}
                             </th>
@@ -58,6 +68,9 @@
                                     Active
                                 @endif
                             </td>
+                            <th scope="row" class="px-6 py-4">
+                                {{ $user->role }}
+                            </th>
                             <td class="px-6 py-4">
                             <form action="{{ route('users.destroy',$user->id) }}" method="POST">
                                 <button type="button" 
