@@ -2,7 +2,8 @@
 - cd capex_entry_test
 - composer install
 - php artisan migrate
-  `WARN`  The database 'capex_entry_test' does not exist on the 'mysql' connection.
+
+- `WARN`  The database 'capex_entry_test' does not exist on the 'mysql' connection.
 
   Would you like to create it? (yes/no) [no]
 `❯ yes`
